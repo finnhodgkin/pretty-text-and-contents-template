@@ -15,7 +15,7 @@ function buildContents(element) {
     applyAnchor("h1");
     applyAnchor("h2");
 
-    document.getElementById(element).innerHTML = buildList(document.getElementsByClassName('anchor'));
+    document.getElementById(element).innerHTML = document.getElementById(element).innerHTML + buildList(document.getElementsByClassName('anchor'));
 }
 
 function buildList(list){
@@ -24,7 +24,7 @@ function buildList(list){
   for(let i = 0; i < list.length; i++){
     a = "<a href='#" + list[i].id + "'>" + list[i].id.replace(/-/g, " ") + "</a>"; //Define link
     if(!i){//IF FIRST ELEMENT
-      a = "<a href='#'>" + list[i].id + "</a>";
+      a = "<a href='#'>" + list[i].id.replace(/-/g, " ") + "</a>";
       contents.push([
         ulP,
           one,liP,a,liA
