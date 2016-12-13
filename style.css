@@ -85,7 +85,7 @@ ul a:hover{
   max-width: 1000px;
   margin: 0 auto;
 }
-#content{
+#content, .text{
   width: calc(97.5% - 250px);
   float: right;
   padding-right: 2.5%;
@@ -96,6 +96,11 @@ ul a:hover{
 }
 #tableOfContents{
   width: 100%;
+}
+#button{
+  width: 75px;
+  float: right;
+  clear: both;
 }
 @media only screen and (max-width: 600px) {
     #content{
