@@ -30,26 +30,27 @@ body{
   background-color: #fffffe;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-size: 140%;
+  margin-top: 28px;
+  margin-bottom: 10px;
+
+}
+
 h1{
   font-family: 'Patua One', Roboto, sans-serif;
-  font-size: 39px;
-  font-weight: 400;
+  font-size: 240%;
   margin-bottom: 14px;
   margin-top: 14px;
-  text-rendering: optimizeLegibility;
 }
 h2{
   font-size: 160%;
-  font-weight: 700;
-  margin-bottom: 14px;
-  margin-top: 28px;
-  text-rendering: optimizeLegibility;
+  font-weight: 400;
 }
 h3{
-  font-size: 140%;
   font-weight: 600;
-  margin-top: 108px;
-  margin-bottom: 10px;
 }
 
 p{
@@ -83,7 +84,20 @@ ul a:hover{
   color: rgb(177,85,85);
 }
 
-section{
+.anchor {
+  display: none;
+}
+.anchor a {
+  color: #757575;
+}
+.anchor a:hover {
+  color: rgb(177,85,85);
+}
+h2:hover .anchor {
+  display: inline;
+}
+
+main{
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -95,6 +109,9 @@ article {
 aside{
   width: 30%;
   float: left;
+}
+header p {
+  font-weight: 600;
 }
 #tableOfContents{
   width: 100%;
@@ -111,9 +128,14 @@ aside{
     #tableOfContents{
       position: inherit;
     }
-    #wrap{
+    main{
       padding-left: 5%;
       padding-right: 5%;
       width: 90%;
+    }
+
+    section {
+      width: 100%;
+      padding: 0%;
     }
 }

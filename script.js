@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
-  buildContents("tableOfContents");
-});
-
 function applyAnchor(tag) {
-    tag = document.getElementsByTagName(tag);
-    var anchorName = "", tHTML = "";
-    for(var i = 0; i < tag.length; i++){
-      anchorName = tag[i].innerHTML.replace(/ /g, "-");
-      tag[i].innerHTML = "<div id='" + anchorName + "' class='anchor'></div>\n" + tag[i].innerHTML;
+    elements = document.getElementsByTagName(tag);
+    var anchorName = '';
+    var link = '';
+    for (var i = 0; i < elements.length; i++){
+      anchorName = elements[i].innerHTML.replace(/ /g, "-");
+      if (tag === 'h2') {
+        link = ' <a href="#' + anchorName + '">#</a>';
+      }
+      elements[i].innerHTML = elements[i].innerHTML + '<span id="' + anchorName + '" class="anchor">' + link + '</div>\n';
     }
 }
 
@@ -73,3 +73,5 @@ function buildList(list){
 
   return contents.join("");
 }
+
+buildContents("tableOfContents");
