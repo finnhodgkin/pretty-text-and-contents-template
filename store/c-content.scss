@@ -1,0 +1,56 @@
+@import "variables";
+
+main{
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: $contentMargin;
+}
+main header{
+  height: auto;
+  background-color: transparent;
+  background-image: none;
+}
+article {
+  width: 70%;
+  float: right;
+}
+aside{
+  width: 27%;
+  padding-right: 3%;
+  float: left;
+}
+header p {
+  font-weight: 600;
+}
+.signupside {
+  width: 100%;
+  overflow-y: hidden;
+  background-color: #F6F6F6;
+  margin-bottom: 20px;
+  margin-top: 13px;
+  border-radius: 5px;
+}
+.signupside a {
+  text-decoration: none;
+}
+.signupsidetitle {
+  color: $bodyText;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 75px;
+  height: 107px;
+  transition: all 0.3s ease;
+}
+.signupside:hover .signupsidetitle {
+  margin-top: -182px;
+}
+.signupsidetext {
+  background-color: $footerBG;
+  color: $footertext;
+  font-size: 16px;
+  height: 170px;
+  margin-top: 0px;
+  transition: all 0.3s ease;
+  padding: 10px;
+}

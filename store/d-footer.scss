@@ -1,0 +1,30 @@
+@import "variables";
+
+footer {
+  clear: both;
+  background-color: $footerBG;
+  padding: 50px 0 50px 0;
+  height: 200px;
+  margin-top: $contentMargin;
+  box-shadow: 0px -4px 7px 0px rgba(0,0,0,0.24);
+}
+#links {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#links {
+  color: $linkText;
+}
+#links a {
+  color: $footertext;
+}
+#links a:hover {
+  color: $linkText;
+}
+#tableOfContents{
+  width: 100%;
+  margin-bottom: 22px;
+}
+.noline:hover {
+  text-decoration: none;
+}

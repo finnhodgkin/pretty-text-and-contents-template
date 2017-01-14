@@ -1,0 +1,73 @@
+@import "variables";
+
+body{
+  font-family: $defaultFont;
+  color: $bodyText;
+  background-color: $bodyBG;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-size: 140%;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+h1{
+  font-family: 'Patua One', Roboto, sans-serif;
+  font-size: 240%;
+  margin-bottom: 14px;
+  margin-top: 14px;
+  color: $h1;
+}
+h2{
+  font-size: 160%;
+}
+h3{
+  font-weight: 600;
+}
+
+p{
+  margin-bottom: 20.8px;
+}
+
+a{
+  color: $linkText;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+a:hover{
+  text-decoration: underline;
+  color: $linkTextHover;
+}
+
+ul{
+  line-height: $largeLineHeight;
+}
+ul ul{
+  margin-left: 20px;
+  line-height: $defaultLineHeight;
+}
+li a{
+  color: $contentsLink;
+  display: block;
+  margin-bottom: 3px;
+  line-height: $defaultLineHeight;
+}
+ul a:hover{
+  color: $linkText;
+}
+
+.anchor {
+  display: none;
+}
+.anchor a {
+  color: $hashAnchor;
+}
+.anchor a:hover {
+  color: $linkText;
+}
+h2:hover .anchor {
+  display: inline;
+}

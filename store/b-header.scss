@@ -1,0 +1,79 @@
+@import "variables";
+
+header {
+  background-color: $headerBG;
+  height: 180px;
+  background-image: url('../images/header-bg.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#headercontainer {
+  height: 180px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0px auto;
+  background-image: url('../images/logo.png');
+  background-position: 5% center;
+  background-repeat: no-repeat;
+}
+#headercontainer h4 {
+  font-size: 240%;
+  padding-left: $headerpadding;
+  padding-top: 40px;
+  margin: 0;
+  color: $headertext;
+  font-family: $defaultFont;
+}
+#headercontainer p {
+  padding-left: $headerpadding;
+  margin-top: 5px;
+  color: $headertext;
+  font-weight: 400;
+}
+nav {
+  height: $navHeight;
+  background-color: $navEdgeBG;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);
+}
+#navcontainer {
+  background-color: $navBG;
+  height: $navHeight;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+nav ul, nav li, nav a {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+nav ul li {
+  display: block;
+  width: $navW;
+  float: left;
+  text-align: center;
+}
+nav li:hover ul {
+  display: block;
+}
+nav a {
+  padding-top: 8px;
+  height: 32px;
+  background-color: $navBG;
+  color: $navtext;
+}
+nav a:hover {
+  text-decoration: none;
+}
+nav li ul {
+  position: absolute;
+  z-index: 100;
+  width: 120%;
+  margin-left: -10%;
+  display: none;
+}
+nav li ul li {
+  width: 100%;
+  height: auto;
+}

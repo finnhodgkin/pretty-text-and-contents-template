@@ -1,0 +1,42 @@
+@media only screen and (max-width: 768px) {
+  #headercontainer h4 {
+    font-size: 150%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    height: 170px;
+  }
+  #headercontainer {
+    height: 170px;
+    background-position: center center;
+  }
+  #headercontainer h4 {
+    display: none;
+  }
+  #headercontainer p {
+    display: none;
+  }
+  main{
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+  }
+  article{
+    width: 100%;
+    padding: 0;
+  }
+  aside{
+    width: 100%;
+    height: auto;
+  }
+  #tableOfContents{
+    position: inherit;
+  }
+
+  section {
+    width: 100%;
+    padding: 0%;
+  }
+}
