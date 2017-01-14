@@ -25,30 +25,33 @@ blockquote:before, blockquote:after,q:before, q:after {
 }
 
 body{
-  font-family: "Helvetica", Sans-Serif;
+  font-family: "Helvetica Neue", Helvetica,Roboto,Arial,sans-serif;
   color: rgb(72, 72, 72);
+  background-color: #fffffe;
 }
 
 h1{
-  font-size: 260%;
-  font-weight: 700;
+  font-family: 'Patua One', Roboto, sans-serif;
+  font-size: 39px;
+  font-weight: 400;
   margin-bottom: 14px;
   margin-top: 14px;
   text-rendering: optimizeLegibility;
 }
 h2{
-  font-size: 200%;
+  font-size: 160%;
   font-weight: 700;
   margin-bottom: 14px;
   margin-top: 28px;
   text-rendering: optimizeLegibility;
 }
 h3{
-  font-size: 130%;
+  font-size: 140%;
   font-weight: 600;
   margin-top: 108px;
   margin-bottom: 10px;
 }
+
 p{
   margin-bottom: 20.8px;
 }
@@ -80,34 +83,28 @@ ul a:hover{
   color: rgb(177,85,85);
 }
 
-#wrap{
+section{
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
-#content, .text{
-  width: calc(97.5% - 250px);
+article {
+  width: 70%;
   float: right;
-  padding-right: 2.5%;
 }
-#side{
-  width: 250px;
+aside{
+  width: 30%;
   float: left;
 }
 #tableOfContents{
   width: 100%;
 }
-#button{
-  width: 75px;
-  float: right;
-  clear: both;
-}
 @media only screen and (max-width: 600px) {
-    #content{
+    article{
       width: 100%;
       padding: 0;
     }
-    #side{
+    aside{
       width: 100%;
       height: auto;
     }
