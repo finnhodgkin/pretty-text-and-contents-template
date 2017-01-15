@@ -90,6 +90,4 @@ document.getElementById('button').addEventListener('click', e => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  buildContents('tableOfContents');
-});
+buildContents('tableOfContents');
