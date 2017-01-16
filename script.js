@@ -2,7 +2,7 @@ function applyAnchor(tag) {
     var elements = document.getElementsByTagName(tag);
     var anchorName = '';
     var link = '';
-    for (var i = 0; i < elements.length; i++){
+    for (var i = 0; i < elements.length; i++) {
       anchorName = elements[i].innerHTML.replace(/ /g, '-');
       if (tag === 'h2') {
         link = ' <a href="#' + anchorName + '">#</a>';
@@ -13,12 +13,22 @@ function applyAnchor(tag) {
     }
 }
 
+function cleardiv(tag) {
+  var a = document.getElementsByClassName(tag);
+  for(var i = a.length - 1; i >= 0; i--) {
+        if(a[i] && a[i].parentElement) {
+            a[i].parentElement.removeChild(a[i]);
+        }
+  }
+}
+
 function buildContents(element) {
+    cleardiv('anchor');
     applyAnchor('h1');
     applyAnchor('h2');
 
     document.getElementById(element).innerHTML =
-      document.getElementById(element).innerHTML +
+      '<h3>Contents</h3>\n' +
       buildList(document.getElementsByClassName('anchor'));
 }
 
