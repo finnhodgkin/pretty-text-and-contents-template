@@ -1,10 +1,11 @@
 @import "variables";
 
-main{
+main {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
   padding-top: $contentMargin;
+  display: block;
 }
 main header{
   height: auto;
@@ -23,34 +24,69 @@ aside{
 header p {
   font-weight: 600;
 }
-.signupside {
+aside nav{
+
+}
+aside nav ul {
+}
+aside nav li{
   width: 100%;
-  overflow-y: hidden;
-  background-color: #F6F6F6;
-  margin-bottom: 20px;
-  margin-top: 13px;
-  border-radius: 5px;
+  float: none;
+  text-align: left;
+}
+aside nav a{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: $linkText;
+  display: block;
+}
+aside nav a:hover {
+  color: $bodyText;
+}
+
+
+.signupsidewrap {
+  width: 100%;
+  overflow: hidden;
+}
+.signupside {
+  background-color: $footerBG;
+  color: $footertext;
+  width: 200%;
+  transition: 0.3s all ease;
+  position: relative;
 }
 .signupside a {
   text-decoration: none;
 }
-.signupsidetitle {
+.signupside:hover {
+  margin-left: -100%;
+}
+.signupside p, .signupside h2 {
+  width: 50%;
+}
+.signupside p b {
+  font-weight: 700;
+  color: $linkText;
+}
+.signupside p {
+  width: 46%;
+  padding: 2%;
+  margin: 0;
+  background-color: $faintgrey;
   color: $bodyText;
-  font-size: 25px;
+  text-decoration: none;
+}
+.signupside h3 {
+  position: absolute;
+  width: 50%;
+  top: 22%;
+  left: 50%;
   text-align: center;
-  padding-top: 75px;
-  height: 107px;
-  transition: all 0.3s ease;
 }
-.signupside:hover .signupsidetitle {
-  margin-top: -182px;
-}
-.signupsidetext {
-  background-color: $footerBG;
-  color: $footertext;
-  font-size: 16px;
-  height: 170px;
-  margin-top: 0px;
-  transition: all 0.3s ease;
-  padding: 10px;
+
+aside nav {
+  background-color: transparent;
+  box-shadow: none;
 }

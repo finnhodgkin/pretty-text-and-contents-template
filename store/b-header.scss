@@ -24,13 +24,17 @@ header {
   margin: 0;
   color: $headertext;
   font-family: $defaultFont;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.45);
 }
 #headercontainer p {
   padding-left: $headerpadding;
   margin-top: 5px;
   color: $headertext;
   font-weight: 400;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.45);
 }
+
+
 nav {
   height: $navHeight;
   background-color: $navEdgeBG;

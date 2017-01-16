@@ -2,7 +2,8 @@ main {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
-  padding-top: 35px; }
+  padding-top: 35px;
+  display: block; }
 
 main header {
   height: auto;
@@ -21,36 +22,61 @@ aside {
 header p {
   font-weight: 600; }
 
-.signupside {
+aside nav li {
   width: 100%;
-  height: 182px;
-  overflow-y: hidden;
-  background-color: #F6F6F6;
-  margin-bottom: 20px;
-  margin-top: 13px;
-  border-radius: 5px; }
+  float: none;
+  text-align: left; }
+
+aside nav a {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: #b15555;
+  display: block; }
+
+aside nav a:hover {
+  color: #484848; }
+
+.signupsidewrap {
+  width: 100%;
+  overflow: hidden; }
+
+.signupside {
+  background-color: #1c2026;
+  color: white;
+  width: 200%;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  position: relative; }
 
 .signupside a {
   text-decoration: none; }
 
-.signupsidetitle {
+.signupside:hover {
+  margin-left: -100%; }
+
+.signupside p, .signupside h2 {
+  width: 50%; }
+
+.signupside p b {
+  font-weight: 700;
+  color: #b15555; }
+
+.signupside p {
+  width: 46%;
+  padding: 2%;
+  margin: 0;
+  background-color: #f6f6f6;
   color: #484848;
-  font-size: 25px;
-  text-align: center;
-  padding-top: 75px;
-  height: 107px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  text-decoration: none; }
 
-.signupside:hover .signupsidetitle {
-  margin-top: -182px; }
+.signupside h3 {
+  position: absolute;
+  width: 50%;
+  top: 22%;
+  left: 50%;
+  text-align: center; }
 
-.signupsidetext {
-  background-color: #1c2026;
-  color: white;
-  font-size: 16px;
-  height: 170px;
-  margin-top: 0px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  padding: 10px; }
+aside nav {
+  background-color: transparent;
+  box-shadow: none; }
