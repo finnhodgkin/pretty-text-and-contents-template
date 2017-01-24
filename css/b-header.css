@@ -11,8 +11,8 @@ header {
   width: 90%;
   max-width: 1000px;
   margin: 0px auto;
-  background-image: url("../images/logo.png");
-  background-position: 5% center;
+  background-image: url("../images/CAU-logo-light.png");
+  background-position: 5px center;
   background-repeat: no-repeat; }
 
 #headercontainer h4 {
@@ -34,7 +34,7 @@ header {
 nav {
   height: 40px;
   background-color: #1c2026;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.24); }
 
 #navcontainer {
   background-color: #16191d;

@@ -25,7 +25,7 @@ header p {
   font-weight: 600;
 }
 aside nav{
-
+  height: auto;
 }
 aside nav ul {
 }
@@ -51,7 +51,7 @@ aside nav a:hover {
   overflow: hidden;
 }
 .signupside {
-  background-color: $footerBG;
+  background-color: $sideupside;
   color: $footertext;
   width: 200%;
   transition: 0.3s all ease;

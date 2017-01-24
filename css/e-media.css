@@ -18,10 +18,12 @@
     width: 90%; }
   article {
     width: 100%;
-    padding: 0; }
+    padding: 0;
+    float: none; }
   aside {
     width: 100%;
-    height: auto; }
+    height: auto;
+    float: none; }
   #tableOfContents {
     position: inherit; }
   section {

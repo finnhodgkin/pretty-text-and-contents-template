@@ -22,6 +22,9 @@ aside {
 header p {
   font-weight: 600; }
 
+aside nav {
+  height: auto; }
+
 aside nav li {
   width: 100%;
   float: none;
@@ -42,7 +45,7 @@ aside nav a:hover {
   overflow: hidden; }
 
 .signupside {
-  background-color: #1c2026;
+  background-color: #bd726c;
   color: white;
   width: 200%;
   -webkit-transition: 0.3s all ease;
