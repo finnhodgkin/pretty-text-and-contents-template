@@ -4,12 +4,14 @@
   }
 }
 
+/* default style */
+.selectnav { display: none; }
+
 @media only screen and (max-width: 600px) {
-  header {
-    height: 170px;
-  }
+  .js #nav { display: none; }
+  .js #navcontainer { padding-top: 8px; height: 32px; width: 100%; }
+  .js .selectnav { display: block; width: 90%; margin: 0 auto; }
   #headercontainer {
-    height: 170px;
     background-position: center center;
   }
   #headercontainer h4 {
