@@ -1,6 +1,33 @@
+@media only screen and (max-width: 920px) {
+  #navcontainer {
+    font-size: 80%;
+  }
+  nav a {
+    padding-top: 12px;
+    height: 28px;
+  }
+}
+
+
 @media only screen and (max-width: 768px) {
   #headercontainer h4 {
     font-size: 150%;
+  }
+  nav a {
+    padding-left: 8px;
+    padding-right: 8px;
+    height: auto;
+  }
+  nav ul li {
+    width: auto;
+  }
+  nav li ul {
+    position: absolute;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    margin-left: 0;
+    display: none;
   }
 }
 
@@ -12,6 +39,7 @@
   .js #navcontainer { padding-top: 8px; height: 32px; width: 100%; }
   .js .selectnav { display: block; width: 90%; margin: 0 auto; }
   #headercontainer {
+    width: 100%;
     background-position: center center;
   }
   #headercontainer h4 {
