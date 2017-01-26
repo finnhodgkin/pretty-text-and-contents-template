@@ -1,15 +1,23 @@
 function applyAnchor(tag) {
     var elements = document.getElementsByTagName(tag);
-    var anchorName = '';
-    var link = '';
-    for (var i = 0; i < elements.length; i++){
+    var anchorName = null;
+    var link = null;
+    var div = null;
+    var span = null;
+    for (var i = 0; i < elements.length; i++) {
       anchorName = elements[i].innerHTML.replace(/ /g, '-');
-      if (tag === 'h2') {
-        link = ' <a href="#' + anchorName + '">#</a>';
-      }
-      elements[i].innerHTML = elements[i].innerHTML +
-      '<span id="' + anchorName + '" class="anchor">' +
-      link + '</span>\n';
+      div = document.createElement('div');
+            div.id = anchorName;
+            div.className = 'anchor';
+      span = document.createElement('span');
+             span.appendChild(document.createTextNode(' '));
+             span.className = 'anchor-span';
+      link = document.createElement('a');
+             link.appendChild(document.createTextNode('#'));
+             link.href = '#' + anchorName;
+      span.appendChild(link);
+      elements[i].appendChild(span);
+      elements[i].insertBefore(div, elements[i].firstChild);
     }
 }
 
@@ -17,53 +25,42 @@ function buildContents(element) {
     applyAnchor('h1');
     applyAnchor('h2');
 
-    document.getElementById(element).innerHTML =
-      buildList(document.getElementsByClassName('anchor'));
+    newBuildList(document.getElementsByClassName('anchor'), document.getElementById(element));
 }
 
-function buildList(list){
+function newBuildList(list, element) {
   var prev = null;
-  var ulP = '<ul>\n'; var ulA = '</ul>\n';
-  var liP = '<li>'; var liA = '</li>\n';
-  var one = '  '; var two = '    ';
-  var a = null; var contents = [];
+  var ul = document.createElement('ul');
+  var header = document.createElement('h3');
+  header.appendChild(document.createTextNode('Page contents'));
+  element.appendChild(header);
+  element.appendChild(ul); // Base list
   for (var i = 0; i < list.length; i++) {
-    a = '<a href="#' + list[i].id + '">' +
-        list[i].id.replace(/-/g, ' ') +
-        '</a>'; //Define link
-    if (!i) {//IF FIRST ELEMENT
-      a = '<a href="#">' +
-          list[i].id.replace(/-/g, ' ') +
-          '</a>';
-      contents.push([ ulP, one, liP, a, liA ].join(''));
-      prev = 'h1';
-    } else if (list[i].parentElement.nodeName === 'H1') {
-        if (prev === 'h1') {                              //IF H1 FOLLOWING H1
-          contents.push([ ulA, ulP, one, liP, a, liA ].join(''));
-          prev = 'h1';
-        }
-        else {                                           //IF H1 FOLLOWING H2
-          contents.push([ one, ulA, ulA, ulP, one, liP, a, liA ].join(''));
-          prev = 'h1';
+    var link = document.createElement('a');
+    var linkText = list[i].id.replace(/-/g, ' ');
+    var currentTag = list[i].parentElement.nodeName;
+    link.href = i === 0 ? '#' : '#' + list[i].id;
+    if (currentTag === 'H1' || i === 0) {
+      element.lastChild
+             .appendChild(document.createElement('li'))
+             .appendChild(link)
+             .appendChild(document.createTextNode(linkText));
+    } else { // H2
+      if (prev === 'H1' || i === 1) {
+        element.lastChild
+               .appendChild(document.createElement('ul'))
+               .appendChild(document.createElement('li'))
+               .appendChild(link)
+               .appendChild(document.createTextNode(linkText));
+      } else {
+        element.lastChild.lastChild
+               .appendChild(document.createElement('li'))
+               .appendChild(link)
+               .appendChild(document.createTextNode(linkText));
       }
-    } else {
-        if (prev === 'h1') {                             //IF H2 FOLLOWING H1
-          contents.push([ one, ulP, two, liP, a, liA ].join(''));
-          prev = 'h2';
-        } else {                                           //IF H2 FOLLOWING H2
-          contents.push([ two, liP, a, liA ].join(''));
-          prev = 'h2';
-        }
     }
+    prev = currentTag;
   }
-
-  if (prev === 'h2') { //Add closing tags
-    contents.push([ one, ulA, ulA ].join(''));
-  } else { contents.push([ ulA ].join('')); }
-
-  return contents.length > 2 ?
-  '<h3>Page contents</h3>\n' + contents.join('') :
-  '';
 }
 
 buildContents('tableOfContents');
@@ -71,14 +68,6 @@ buildContents('tableOfContents');
 (function navbar(nav) {
   var item = document.getElementsByTagName(nav)[0]; // first nav in doc
   var height = document.getElementById('headercontainer').clientHeight;
-  function scroll(loc) {
-    if (loc > height) {
-      item.classList = 'nav__fixed';
-    } else {
-      item.classList = '';
-    }
-  }
-  window.onscroll = (e) => {
-    scroll(e.pageY);
-  };
+  function scroll(loc) { item.className = loc > height ? 'nav__fixed' : ''; }
+  window.onscroll = function (e) { e.pageY ? scroll(e.pageY) : ''; };
 })('nav');
